@@ -1,0 +1,85 @@
+{
+    "variables": {
+        "region": "{{env `region`}}",
+        "source_ami": "{{env `source_ami`}}",
+        "instance_type": "{{env `instance_type`}}",
+        "subnet_id": "{{env `subnet_id`}}",
+        "security_group_id": "{{env `security_group_id`}}",
+        "ssh_username": "{{env `ssh_username`}}",
+        "ami_users": "{{env `ami_users`}}",
+        "ami_name": "{{env `ami_name`}}",
+        "script_name": "{{env `script_name`}}"
+    },
+    "builders": [
+        {
+            "type": "amazon-ebssurrogate",
+            "region": "{{user `region`}}",
+            "source_ami": "{{user `source_ami`}}",
+            "instance_type": "{{user `instance_type`}}",
+            "subnet_id": "{{user `subnet_id`}}",
+            "security_group_id": "{{user `security_group_id`}}",
+            "ssh_username": "{{user `ssh_username`}}",
+            "ssh_private_ip": true,
+            "ami_name": "{{user `ami_name`}}-{{timestamp}}",
+            "ami_description": "{{user `ami_name`}}-{{isotime \"2006-01-02\"}} created by Packer amazon-ebssurrogate.",
+	    "ami_virtualization_type": "hvm",
+            "tags": {
+                "Name": "{{user `ami_name`}}",
+                "ManagedBy": "Packer"
+            },
+            "run_tags": {
+                "ManagedBy": "Packer"
+            },
+            "run_volume_tags": {
+                "ManagedBy": "Packer"
+            },
+            "snapshot_tags": {
+                "ManagedBy": "Packer"
+            },
+            "launch_block_device_mappings": [
+                {
+                    "device_name": "/dev/sdf",
+                    "volume_type": "gp2",
+                    "volume_size": "32",
+                    "delete_on_termination": "true"
+                }
+            ],
+            "ami_root_device": {
+                    "source_device_name": "/dev/sdf",
+                    "device_name": "/dev/xvda",
+                    "volume_type": "gp2",
+                    "volume_size": "32",
+                    "delete_on_termination": "true"
+            },
+            "ami_block_device_mappings": [
+                {
+                    "device_name": "/dev/xvdb",
+                    "virtual_name": "ephemeral0"
+                },
+                {
+                    "device_name": "/dev/xvdc",
+                    "virtual_name": "ephemeral1"
+                },
+                {
+                    "device_name": "/dev/xvdd",
+                    "virtual_name": "ephemeral2"
+                },
+                {
+                    "device_name": "/dev/xvde",
+                    "virtual_name": "ephemeral3"
+                }
+            ]
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "file",
+            "source": "{{user `resource_dir`}}/",
+            "destination": "/tmp/"
+        },
+        {
+            "type": "shell",
+            "script": "{{user `script_name`}}"
+        }
+    ]
+}
