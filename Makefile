@@ -11,7 +11,7 @@ setup:
 	unzip -d bin/ tmp/packer_$(PACKER_VERSION)_$(ARCH).zip
 
 build:
-	./bin/packer build -debug \
+	./bin/packer build \
 		-var-file ./variables.json \
 		-var-file ./resources/$(DISTRIBUTION)/$(OS_VERSION)/variables.json \
 		./template.json
