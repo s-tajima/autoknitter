@@ -1,7 +1,5 @@
 {
   "instance_type":     "t2.small",
-  "source_ami":        "ami-859bbfe2",
-  "ssh_username":      "ec2-user",
   "region":            "ap-northeast-1",
 
   "subnet_id":         "",

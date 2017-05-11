@@ -1,0 +1,7 @@
+default=0
+timeout=0
+hiddenmenu
+title CentOS 6
+       root (hd0,0)
+       kernel /vmlinuz-%KERNELRELEASE% ro root=LABEL=/ console=ttyS0 xen_pv_hvm=enable 4
+       initrd /initramfs-%KERNELRELEASE%.img

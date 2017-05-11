@@ -1,11 +1,9 @@
 {
     "variables": {
         "region": "{{env `region`}}",
-        "source_ami": "{{env `source_ami`}}",
         "instance_type": "{{env `instance_type`}}",
         "subnet_id": "{{env `subnet_id`}}",
         "security_group_id": "{{env `security_group_id`}}",
-        "ssh_username": "{{env `ssh_username`}}",
         "ami_users": "{{env `ami_users`}}",
         "ami_name": "{{env `ami_name`}}",
         "script_name": "{{env `script_name`}}"
@@ -14,11 +12,11 @@
         {
             "type": "amazon-ebssurrogate",
             "region": "{{user `region`}}",
-            "source_ami": "{{user `source_ami`}}",
+            "source_ami": "ami-859bbfe2",
             "instance_type": "{{user `instance_type`}}",
             "subnet_id": "{{user `subnet_id`}}",
             "security_group_id": "{{user `security_group_id`}}",
-            "ssh_username": "{{user `ssh_username`}}",
+            "ssh_username": "ec2-user",
             "ssh_private_ip": true,
             "ami_name": "{{user `ami_name`}}-{{timestamp}}",
             "ami_description": "{{user `ami_name`}}-{{isotime \"2006-01-02\"}} created by Packer amazon-ebssurrogate.",
