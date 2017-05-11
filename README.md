@@ -33,6 +33,45 @@ ap-northeast-1: ami-XXXXXXXX
 
 ## Concepts
 
-* Build Amazon Machine Image automatically from scratch.
+* Helper for build Amazon Machine Image automatically from scratch.
 * Using Packer, EBS Surrogate Builder.
 
+## Requirements
+
+* make
+
+## Setup
+
+```
+$ git clone git@github.com:s-tajima/autoknitter.git
+$ make setup
+```
+
+## Configure
+
+* Prepare AWS environment for Packer.
+    * refs: https://www.packer.io/docs/builders/amazon.html#specifying-amazon-credentials
+
+* Prepare variables file.
+```
+$ cp variables.json.sample variables.json # and edit this.
+```
+
+## Usage
+
+```
+$ make build
+```
+
+## Available distributions, versions
+
+* CentOS 6.9
+* (Planning to add more...)
+
+## License
+
+[MIT](./LICENSE)
+
+## Author
+
+[Satoshi Tajima](https://github.com/s-tajima)
