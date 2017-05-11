@@ -17,6 +17,7 @@
             "instance_type": "{{user `instance_type`}}",
             "subnet_id": "{{user `subnet_id`}}",
             "security_group_id": "{{user `security_group_id`}}",
+            "associate_public_ip_address": true,
             "ssh_username": "ec2-user",
             "ssh_private_ip": true,
             "ami_name": "{{user `ami_name`}}-{{timestamp}}",
