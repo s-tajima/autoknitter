@@ -14,7 +14,4 @@ build:
 	./bin/packer build \
 		-var-file ./variables.json \
 		-var-file ./resources/$(DISTRIBUTION)/$(OS_VERSION)/variables.json \
-		-var 'script_name=./resources/$(DISTRIBUTION)/$(OS_VERSION)/_bootstrap.sh' \
-		-var 'resource_dir=./resources/$(DISTRIBUTION)/$(OS_VERSION)/artifacts/' \
 		./template.json
-

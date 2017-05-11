@@ -6,7 +6,8 @@
         "security_group_id": "{{env `security_group_id`}}",
         "ami_users": "{{env `ami_users`}}",
         "ami_name": "{{env `ami_name`}}",
-        "script_name": "{{env `script_name`}}"
+        "script_name": "{{env `script_name`}}",
+        "resource_dir": "{{env `resource_dir`}}"
     },
     "builders": [
         {
