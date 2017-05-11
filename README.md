@@ -29,6 +29,7 @@ ap-northeast-1: ami-XXXXXXXX
 * [Installation](#installation)
 * [Configure](#configure)
 * [Usage](#usage)
+* [Available distributions, versions](#available-distributions-versions)
 * [License](#license)
 
 ## Concepts
