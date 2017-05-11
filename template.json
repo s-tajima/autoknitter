@@ -53,19 +53,19 @@
             },
             "ami_block_device_mappings": [
                 {
-                    "device_name": "/dev/xvdb",
+                    "device_name": "/dev/sdb",
                     "virtual_name": "ephemeral0"
                 },
                 {
-                    "device_name": "/dev/xvdc",
+                    "device_name": "/dev/sdc",
                     "virtual_name": "ephemeral1"
                 },
                 {
-                    "device_name": "/dev/xvdd",
+                    "device_name": "/dev/sdd",
                     "virtual_name": "ephemeral2"
                 },
                 {
-                    "device_name": "/dev/xvde",
+                    "device_name": "/dev/sde",
                     "virtual_name": "ephemeral3"
                 }
             ]
