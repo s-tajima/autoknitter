@@ -51,11 +51,10 @@ $ make setup
 
 * Prepare AWS environment for Packer.
     * refs: https://www.packer.io/docs/builders/amazon.html#specifying-amazon-credentials
-
 * Prepare variables file.
-```
-$ cp variables.json.sample variables.json # and edit this.
-```
+    ```
+    $ cp variables.json.sample variables.json # and edit this.
+    ```
 
 ## Usage
 
