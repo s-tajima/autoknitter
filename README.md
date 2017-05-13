@@ -34,8 +34,8 @@ ap-northeast-1: ami-XXXXXXXX
 
 ## Concepts
 
-* Helper for build Amazon Machine Image automatically from scratch.
-* Using Packer, EBS Surrogate Builder.
+* Reference implementation for using Packer, EBS Surrogate Builder.
+* Build Amazon Machine Image automatically from scratch.
 
 ## Requirements
 
